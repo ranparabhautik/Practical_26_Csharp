@@ -27,21 +27,28 @@ namespace EmployeeManagement.DAL.Repository.Query
                     JoiningDate = x.JoiningDate,
                     Status = x.Status
                 }
-                ) .ToListAsync();
+                ).ToListAsync();
         }
 
         public async Task<EmployeeQueryModel> GetById(int id)
         {
-            return await _context.Employees.Where(x => x.Id == id).Select(x=> new EmployeeQueryModel
+            var employee = await _context.Employees.Include(x=> x.Department).SingleOrDefaultAsync(x=> x.Id == id && x.IsDeleted == false);
+            if(employee == null)
             {
-                Id = x.Id,
-                Name = x.Name,
-                Salary = x.Salary,
-                Department = x.Department.Name,
-                EmailId = x.EmailId,
-                JoiningDate = x.JoiningDate,
-                Status = x.Status
-            }).FirstOrDefaultAsync();
+                return null ;
+            }
+            return new EmployeeQueryModel
+            {
+                Id = employee.Id, 
+                Name = employee.Name,
+                Department = employee.Department.Name,
+                EmailId = employee.EmailId,
+                JoiningDate = employee.JoiningDate,
+                Status = employee.Status,
+                Salary = employee.Salary
+            };
+
+            
         }
     }
 }

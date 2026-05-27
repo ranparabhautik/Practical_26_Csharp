@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EmployeeManagement.DAL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c4a1bc38f3e0cc04247e1944114cd4ea2eb8723e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dcf7ebfa8ad5fc6c2d5e92d353f84145bfe72eee")]
 [assembly: System.Reflection.AssemblyProductAttribute("EmployeeManagement.DAL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EmployeeManagement.DAL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
